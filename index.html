@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rajutanku — Rajutan Handmade untuk Hangat Sehari-hari</title>
+  <meta name="description" content="Toko rajutan handmade: syal, topi, amigurumi, dan tas rajut. Dibuat satu per satu oleh pengrajin lokal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">rajutanku<span class="brand-dot">.</span></a>
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a href="#produk">Produk</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#cara-pesan">Cara Pesan</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <button class="cart-button" id="cart-toggle" aria-haspopup="dialog" aria-controls="cart-panel">
+      Keranjang <span class="cart-count" id="cart-count">0</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Handmade · Benang katun & wol · Dikirim ke seluruh Indonesia</p>
+        <h1>Setiap helai simpul dibuat dengan sabar.</h1>
+        <p class="hero-lede">
+          rajutanku adalah studio rajut kecil di Bandung. Kami membuat syal, topi,
+          amigurumi, dan tas rajut satu per satu — tanpa mesin, tanpa terburu-buru.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#produk">Lihat koleksi</a>
+          <a class="btn btn-ghost" href="#cara-pesan">Pesan custom</a>
+        </div>
+        <ul class="hero-stats">
+          <li><strong>500+</strong> pesanan terkirim</li>
+          <li><strong>4.9/5</strong> rating pembeli</li>
+          <li><strong>100%</strong> buatan tangan</li>
+        </ul>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 320" class="yarn-svg">
+          <defs>
+            <radialGradient id="ballGrad" cx="35%" cy="30%" r="80%">
+              <stop offset="0%" stop-color="#f6d9c4" />
+              <stop offset="100%" stop-color="#d98b66" />
+            </radialGradient>
+          </defs>
+          <circle cx="160" cy="160" r="120" fill="url(#ballGrad)" />
+          <g stroke="#a95f3f" stroke-width="3" fill="none" opacity="0.7">
+            <path d="M60 120 Q160 60 260 120" />
+            <path d="M50 160 Q160 100 270 160" />
+            <path d="M60 200 Q160 140 260 200" />
+            <path d="M80 240 Q160 180 240 240" />
+            <path d="M100 70 Q160 130 220 70" transform="rotate(25 160 160)" />
+            <path d="M100 250 Q160 190 220 250" transform="rotate(-25 160 160)" />
+          </g>
+          <path d="M270 190 q40 20 20 60 q-15 30 -55 25" stroke="#a95f3f" stroke-width="5" fill="none" stroke-linecap="round" />
+        </svg>
+      </div>
+    </section>
+
+    <section class="usp-strip" aria-label="Keunggulan kami">
+      <div class="usp"><strong>Benang lembut</strong><span>Katun mercerized & wol merino, aman untuk kulit sensitif.</span></div>
+      <div class="usp"><strong>Bisa custom</strong><span>Pilih warna dan ukuran sendiri, jadi dalam 7–14 hari.</span></div>
+      <div class="usp"><strong>Kemasan hadiah</strong><span>Gratis wrapping kertas tisu + kartu ucapan tulis tangan.</span></div>
+      <div class="usp"><strong>Garansi jahitan</strong><span>Benang lepas dalam 30 hari? Kami rajit ulang, gratis.</span></div>
+    </section>
+
+    <section id="produk" class="products">
+      <div class="section-head">
+        <h2>Koleksi siap kirim</h2>
+        <p>Stok terbatas karena setiap item hanya ada satu. Begitu habis, baru dirajit lagi.</p>
+      </div>
+      <div class="product-grid" id="product-grid"><!-- diisi dari app.js --></div>
+    </section>
+
+    <section id="tentang" class="about">
+      <div class="about-photo" aria-hidden="true">
+        <div class="stitch-pattern"></div>
+      </div>
+      <div class="about-copy">
+        <h2>Dari dua jarum dan satu kebiasaan lama</h2>
+        <p>
+          Studio ini dimulai tahun 2019 dari hobi merajit sambil menunggu kopi seduh.
+          Sekarang tiga pengrajin mengerjakan semua pesanan dari rumah masing-masing di
+          Bandung — dibayar per karya, bukan per kecepatan.
+        </p>
+        <p>
+          Kami sengaja tidak memproduksi massal. Satu syal butuh 12–20 jam kerja, dan
+          itulah kenapa hasilnya jatuh pas di leher, tidak menggantung aneh.
+        </p>
+      </div>
+    </section>
+
+    <section id="cara-pesan" class="how-to">
+      <div class="section-head">
+        <h2>Cara pesan</h2>
+        <p>Tiga langkah, tanpa aplikasi tambahan.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="step-num">1</span>
+          <h3>Pilih & checkout</h3>
+          <p>Tambahkan produk ke keranjang, lalu checkout lewat WhatsApp. Link pembayaran dikirim di chat yang sama.</p>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <h3>Konfirmasi & proses</h3>
+          <p>Barang ready dikirim 1x24 jam. Item custom dirajit 7–14 hari, foto progres dikirim tiap tiga hari.</p>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <h3>Kirim & garansi</h3>
+          <p>Paket pakai ekspedisi dengan asuransi opsional. Ada masalah jahitan? Klaim garansi 30 hari.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="testimonials">
+      <div class="section-head">
+        <h2>Kata mereka</h2>
+      </div>
+      <div class="quote-grid">
+        <blockquote>
+          <p>"Syal merinonya lembut banget, anakku yang biasanya gatel-nyaan langsung mau pakai tiap hari."</p>
+          <footer>— Rani, Jakarta <cite>pembeli sejak 2022</cite></footer>
+        </blockquote>
+        <blockquote>
+          <p>"Pesan beruang amigurumi untuk kado ultah istri. Datang tepat waktu, lengkap dengan kartu tulis tangan."</p>
+          <footer>— Bagas, Surabaya <cite>pesanan custom</cite></footer>
+        </blockquote>
+        <blockquote>
+          <p>"Tas rajutnya muat laptop 14 inci plus bekal. Jahitannya rapat, sudah dicuci dua kali masih rapi."</p>
+          <footer>— Nadia, Yogyakarta <cite>pembeli berulang</cite></footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="kontak" class="contact">
+      <div class="contact-copy">
+        <h2>Mau pesan warna sendiri?</h2>
+        <p>Kirim foto benang atau sebutkan warna impianmu. Kami balas dengan estimasi harga dan jadwal rajit.</p>
+      </div>
+      <form class="contact-form" id="contact-form" novalidate>
+        <label>
+          Nama
+          <input type="text" name="nama" autocomplete="name" required />
+        </label>
+        <label>
+          Nomor WhatsApp
+          <input type="tel" name="wa" autocomplete="tel" placeholder="08xxxxxxxxxx" required />
+        </label>
+        <label>
+          Pesanan yang diinginkan
+          <textarea name="pesan" rows="4" placeholder="Contoh: syal rajut warna sage, panjang 150 cm" required></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Kirim ke WhatsApp</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> rajutanku — studio rajut handmade, Bandung, Indonesia.</p>
+    <p>Ibu Kota Kreatif Award 2024 · IG @rajutanku · WA 0812-3456-7890</p>
+  </footer>
+
+  <aside class="cart-panel" id="cart-panel" role="dialog" aria-label="Keranjang belanja" aria-hidden="true">
+    <div class="cart-head">
+      <h2>Keranjang</h2>
+      <button class="cart-close" id="cart-close" aria-label="Tutup keranjang">×</button>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+    <p class="cart-empty" id="cart-empty">Keranjang masih kosong.</p>
+    <div class="cart-foot">
+      <p>Total: <strong id="cart-total">Rp0</strong></p>
+      <button class="btn btn-primary" id="checkout-btn">Checkout via WhatsApp</button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
