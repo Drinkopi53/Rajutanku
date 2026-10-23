@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benang Hangat — Rajutan Tangan Asli Indonesia</title>
+  <meta name="description" content="Bisnis Rajutan: sweter, syal, topi, dan amigurumi rajut tangan. Dikerjakan oleh pengrajin lokal, bahan wool premium." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="4 5"/><path d="M10 16c3-6 9-6 12 0M10 16c3 6 9 6 12 0" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+      </span>
+      <span class="brand-text">Benang<span>Hangat</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <a href="#koleksi">Koleksi</a>
+      <a href="#proses">Proses</a>
+      <a href="#testimoni">Testimoni</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-button" id="cart-toggle" aria-haspopup="dialog" aria-controls="cart-drawer">
+        Keranjang <span class="cart-count" id="cart-count">0</span>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" hidden aria-label="Navigasi mobile">
+    <a href="#koleksi">Koleksi</a>
+    <a href="#proses">Proses</a>
+    <a href="#testimoni">Testimoni</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Rajutan tangan · sejak 2018 · Bandung</p>
+        <h1 class="hero-title">Setiap helai benang<br /><em>dikerjakan dengan sabar.</em></h1>
+        <p class="hero-sub">Sweter, syal, topi, dan boneka rajut yang dibuat per pesanan oleh 12 pengrajin lokal. Bukan pabrikan — jadi stoknya sedikit, tapi hangatnya lama.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#koleksi">Lihat Koleksi</a>
+          <a class="btn btn-ghost" href="#proses">Cara Kami Merajut</a>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>4.9/5</dt><dd>1.200+ ulasan</dd></div>
+          <div><dt>100%</dt><dd>Wool &amp; katun alami</dd></div>
+          <div><dt>7 hari</dt><dd>Rata-rata pengerjaan</dd></div>
+        </dl>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="yarn yarn-a"></div>
+        <div class="yarn yarn-b"></div>
+        <div class="yarn yarn-c"></div>
+        <svg class="stitch-divider" viewBox="0 0 400 60" preserveAspectRatio="none">
+          <path d="M0 30 Q25 0 50 30 T100 30 T150 30 T200 30 T250 30 T300 30 T350 30 T400 30" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M0 45 Q25 15 50 45 T100 45 T150 45 T200 45 T250 45 T300 45 T350 45 T400 45" fill="none" stroke="currentColor" stroke-width="3" opacity=".5"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="marquee-band" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Knit • Crochet • Amigurumi • Beanies • Scarves • Cardigan • Handmade • Wool •</span>
+        <span>Knit • Crochet • Amigurumi • Beanies • Scarves • Cardigan • Handmade • Wool •</span>
+      </div>
+    </section>
+
+    <section class="shop" id="koleksi">
+      <div class="section-head">
+        <h2>Koleksi Rajutan</h2>
+        <p>Pilih kategori, tambahkan ke keranjang. Harga dalam Rupiah, ongkir dihitung saat checkout.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter kategori">
+        <button class="chip is-active" data-category="all">Semua</button>
+        <button class="chip" data-category="pakaian">Pakaian</button>
+        <button class="chip" data-category="aksesoris">Aksesoris</button>
+        <button class="chip" data-category="boneka">Boneka</button>
+        <button class="chip" data-category="rumah">Untuk Rumah</button>
+      </div>
+
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="process" id="proses">
+      <div class="process-inner">
+        <h2>Dari gulungan benang ke lemari kamu</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-num">01</span>
+            <h3>Pilih pola &amp; warna</h3>
+            <p>Konsultasi lewat WhatsApp atau form di bawah. Boleh kirim referensi model sendiri.</p>
+          </li>
+          <li>
+            <span class="step-num">02</span>
+            <h3>Merajut manual</h3>
+            <p>Satu pengrajin mengerjakan satu produk dari awal sampai akhir. Tidak dibagi-bagi.</p>
+          </li>
+          <li>
+            <span class="step-num">03</span>
+            <h3>Cek jahitan &amp; cuci lembut</h3>
+            <p>Setiap item melewati quality check 12 titik sebelum dikemas dengan kertas daur ulang.</p>
+          </li>
+          <li>
+            <span class="step-num">04</span>
+            <h3>Kirim ke rumahmu</h3>
+            <p>Ekspedisi nasional, gratis ongkir untuk pembelian di atas Rp500.000.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimoni">
+      <div class="section-head">
+        <h2>Kata mereka</h2>
+      </div>
+      <div class="quote-grid">
+        <blockquote class="quote-card quote-tall">
+          <p>“Sweter merino-ku sudah dua musim dingin, jahitannya belum geser satu pun. Potongannya pas banget karena ukuran diambil per cm.”</p>
+          <footer>— Rania, Jakarta <span class="stars" aria-label="5 bintang">★★★★★</span></footer>
+        </blockquote>
+        <blockquote class="quote-card">
+          <p>“Pesan beruang amigurumi untuk anak saya, malah saya yang tidur memeluknya tiap malam.”</p>
+          <footer>— Dimas, Surabaya <span class="stars" aria-label="5 bintang">★★★★★</span></footer>
+        </blockquote>
+        <blockquote class="quote-card">
+          <p>“Syalnya ringan tapi hangat parah. Dikirim tiga hari lebih cepat dari estimasi.”</p>
+          <footer>— Mbak Yuni, Yogyakarta <span class="stars" aria-label="4 bintang">★★★★☆</span></footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="contact" id="kontak">
+      <div class="contact-card">
+        <div class="contact-copy">
+          <h2>Mau pesan model custom?</h2>
+          <p>Tulis detailnya, kami balas maksimal 1x24 jam dengan estimasi harga &amp; waktu pengerjaan.</p>
+          <ul class="contact-list">
+            <li>WhatsApp: <a href="https://wa.me/6281234567890">+62 812-3456-7890</a></li>
+            <li>Email: <a href="mailto:halo@benanghangat.id">halo@benanghangat.id</a></li>
+            <li>Studio: Jl. Cendana 12, Bandung — buka Selasa–Minggu</li>
+          </ul>
+        </div>
+        <form class="contact-form" id="contact-form" novalidate>
+          <label>Nama
+            <input type="text" name="nama" autocomplete="name" required />
+          </label>
+          <label>Email atau nomor WA
+            <input type="text" name="kontak" autocomplete="email" required />
+          </label>
+          <label>Detail pesanan
+            <textarea name="pesan" rows="4" placeholder="Contoh: cardigan oversized, warna sage, size L, target akhir bulan ini" required></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Kirim Permintaan</button>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Benang Hangat · Rajutan tangan dari Bandung</p>
+    <a href="#top">Kembali ke atas ↑</a>
+  </footer>
+
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Keranjang belanja" aria-hidden="true">
+    <div class="cart-head">
+      <h3>Keranjang</h3>
+      <button class="cart-close" id="cart-close" aria-label="Tutup keranjang">×</button>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+    <p class="cart-empty" id="cart-empty">Keranjang masih kosong. Yuk pilih rajutan favoritmu.</p>
+    <div class="cart-foot">
+      <p>Total <strong id="cart-total">Rp0</strong></p>
+      <button class="btn btn-primary" id="checkout-btn">Checkout via WhatsApp</button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay" hidden></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
