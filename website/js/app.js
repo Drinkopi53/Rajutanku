@@ -37,23 +37,35 @@ const cartTotalEl = document.getElementById("cart-total");
 const drawer = document.getElementById("cart-drawer");
 const overlay = document.getElementById("overlay");
 
+function escapeHtml(str) {
+  if (str === null || str === undefined) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 function renderProducts(category) {
   const items = category === "all"
     ? PRODUCTS
     : PRODUCTS.filter((p) => p.category === category);
 
+  // All fields are escaped via escapeHtml
+  // fixmyslop-ignore[sec/raw-html] Safely escaped dynamic values inside template string
   grid.innerHTML = items.map((p) => `
     <article class="product-card">
-      <div class="product-visual" style="background:${p.color}">
-        ${p.badge ? `<span class="badge">${p.badge}</span>` : ""}
-        <span aria-hidden="true">${p.emoji}</span>
+      <div class="product-visual" style="background:${escapeHtml(p.color)}">
+        ${p.badge ? `<span class="badge">${escapeHtml(p.badge)}</span>` : ""}
+        <span aria-hidden="true">${escapeHtml(p.emoji)}</span>
       </div>
       <div class="product-body">
-        <h3 class="product-name">${p.name}</h3>
-        <p class="product-desc">${p.desc}</p>
+        <h3 class="product-name">${escapeHtml(p.name)}</h3>
+        <p class="product-desc">${escapeHtml(p.desc)}</p>
         <div class="product-row">
-          <span class="price">${rupiah.format(p.price)}</span>
-          <button class="add-btn" data-id="${p.id}">+ Keranjang</button>
+          <span class="price">${escapeHtml(rupiah.format(p.price))}</span>
+          <button class="add-btn" data-id="${escapeHtml(p.id)}">+ Keranjang</button>
         </div>
       </div>
     </article>
@@ -95,20 +107,22 @@ function renderCart() {
   const totalQty = entries.reduce((sum, [, qty]) => sum + qty, 0);
   cartCountEl.textContent = totalQty;
 
+  // All fields are escaped via escapeHtml
+  // fixmyslop-ignore[sec/raw-html] Safely escaped dynamic values inside template string
   cartItemsEl.innerHTML = entries.map(([id, qty]) => {
     const p = PRODUCTS.find((x) => x.id === id);
     if (!p) return "";
     return `
-      <li class="cart-item" data-id="${id}">
-        <span class="cart-thumb" style="background:${p.color}" aria-hidden="true">${p.emoji}</span>
+      <li class="cart-item" data-id="${escapeHtml(id)}">
+        <span class="cart-thumb" style="background:${escapeHtml(p.color)}" aria-hidden="true">${escapeHtml(p.emoji)}</span>
         <div>
-          <p class="cart-item-name">${p.name}</p>
-          <p class="cart-item-price">${rupiah.format(p.price)} × ${qty}</p>
+          <p class="cart-item-name">${escapeHtml(p.name)}</p>
+          <p class="cart-item-price">${escapeHtml(rupiah.format(p.price))} × ${escapeHtml(qty)}</p>
         </div>
         <div class="qty-controls">
-          <button class="qty-btn" data-delta="-1" aria-label="Kurangi ${p.name}">−</button>
-          <span>${qty}</span>
-          <button class="qty-btn" data-delta="1" aria-label="Tambah ${p.name}">+</button>
+          <button class="qty-btn" data-delta="-1" aria-label="Kurangi ${escapeHtml(p.name)}">−</button>
+          <span>${escapeHtml(qty)}</span>
+          <button class="qty-btn" data-delta="1" aria-label="Tambah ${escapeHtml(p.name)}">+</button>
         </div>
       </li>
     `;
